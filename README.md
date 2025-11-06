@@ -45,3 +45,9 @@ Além disso, a página possui a funcionalidade de troca de idioma entre Portugu�
 - HTML5
 - CSS3
 - JavaScript"
+ 
+<br>
+
+## 🌐 Visualizar Online
+Você pode acessar a landing page aqui:  
+[Project Wide - Landing Page](https://adryelsantoss.github.io/projectwide-landing-page/)
