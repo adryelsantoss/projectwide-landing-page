@@ -9,6 +9,7 @@ const signUp = document.querySelector(".menu-button")
 const login = document.querySelector("#login")
 let currentLang = "";
 
+// ----- TRADUÇÃO ----
 function changedIdBr() {
     currentLang = "br";
     title.textContent = `Local de Ampla Cobertura`;
@@ -21,8 +22,6 @@ function changedIdBr() {
     signUp.textContent = `Inscrever-se`;
     learnMore.textContent = `Saiba Mais`;
     login.textContent = `Entrar`;
-
-    styleSettings()
 }
 
 function changedIdUsa() {
@@ -38,33 +37,19 @@ function changedIdUsa() {
     signUp.textContent = `Sign Up`;
     learnMore.textContent = `Learn More`;
     login.textContent = `Login`
-
-    styleSettings()
 }
 
-function styleSettings() {
-
-    if (window.matchMedia("(max-width:900px)").matches) {
-        if (currentLang === "br") {
-            text.style.width = "340px";
-        } else if (currentLang === "usa") {
-            text.style.width = "304px";
-        }
-    } else {
-        text.style.width = "493px";
-    }
-}
+// ----- ANIMAÇÃO DE TRANSIÇÃO -----
 function fadeContent(callback) {
-  document.body.style.transition = "opacity 0.7s";
-  document.body.style.opacity = 0;
+    document.body.style.transition = "opacity 0.7s";
+    document.body.style.opacity = 0;
 
-  setTimeout(() => {
-    callback(); // muda o idioma
-    document.body.style.opacity = 1;
-  }, 700);
+    setTimeout(() => {
+        callback(); // muda o idioma
+        document.body.style.opacity = 1;
+    }, 700);
 }
 
 
-window.addEventListener('resize', styleSettings)
 changedBr.addEventListener('click', () => fadeContent(changedIdBr));
 changedUsa.addEventListener('click', () => fadeContent(changedIdUsa));

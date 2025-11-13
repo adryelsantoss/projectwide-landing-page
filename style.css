@@ -7,6 +7,10 @@
 
 header {
     margin: 35px 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
     position: relative;
 }
 
@@ -14,7 +18,6 @@ header {
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
-    margin-right: 32px;
     color: #17233D;
     cursor: pointer;
 }
@@ -23,7 +26,6 @@ header {
     width: 124px;
     height: 51px;
     border-radius: 6px;
-    border-width: 1px;
     background: #6FBF44;
     border: 1px solid #4CB538;
     font-weight: 500;
@@ -33,17 +35,27 @@ header {
     cursor: pointer;
 }
 
+/* ----- IMAGEM PRINCIPAL ----- */
 .image-logo {
     width: 595px;
-    height: 500px;
-    margin: 110px 0 0 110px;
-    display: inline-block;
+    height: auto;
+}
+
+/* ----- CONTEÚDO PRINCIPAL ----- */
+.div-main {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 100px auto 0;
+    gap: 100px;
 }
 
 section {
-    display: inline-block;
-    margin: 150px 0 0 100px;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-bottom: 60px;
 }
 
 h1 {
@@ -51,15 +63,15 @@ h1 {
     font-size: 62px;
     line-height: 82px;
     color: #161A49;
-    width: 582px;
+    width: 100%;
+    max-width: 582px;
 }
 
 p {
     font-weight: 400;
     font-size: 18px;
     line-height: 33px;
-    width: 493px;
-    margin: 40px 0 35px;
+    max-width: 493px;
 }
 
 .link-section {
@@ -70,18 +82,12 @@ p {
     cursor: pointer;
 }
 
-.link-section:hover {
+.link-section:hover,
+ .menu-header:hover {
     opacity: 0.4;
 }
 
-.link-section:active {
-    opacity: 0.8;
-}
-
-.menu-header:hover {
-    opacity: 0.4;
-}
-
+.link-section:active,
 .menu-header:active {
     opacity: 0.8;
 }
@@ -94,12 +100,14 @@ p {
     opacity: 0.4;
 }
 
-div {
+/* ----- ÍCONES IDIOMA ----- */
+.img-translate {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     position: absolute;
-    top: -20px;
     right: 20px;
-    width: auto;
-    height: auto;
+    top: -15px
 }
 
 .img-br {
@@ -122,18 +130,30 @@ div {
     opacity: 0.8;
 }
 
+/* ---------- RESPONSIVIDADE ---------- */
 @media screen and (max-width:900px) {
-    section {
-        position: static;
-        display: block;
-        width: 95%;
-        margin: 60px auto 0;
-        text-align: center;
-    }
 
     header {
-        margin: 20px 20px 0 47px;
-        text-align: auto;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .menu-header {
+        display: none;
+    }
+
+    /*  CONTEÚDO PRINCIPAL  */
+    .div-main {
+        display: flex;
+        flex-flow: column wrap;
+        margin: 65px auto 0;
+        gap: 30px;
+    }
+
+    section {
+        align-items: center;
+        text-align: center;
+        gap: 20px
     }
 
     h1 {
@@ -142,46 +162,34 @@ div {
         line-height: 30px;
         color: #161A49;
         width: 278px;
-        text-align: center;
-        margin: 0 auto;
     }
 
     p {
         font-weight: 400;
         font-size: 16px;
         line-height: 33px;
-        width: 304px;
-        height: 130px;
-        margin: 40px auto;
-        text-align: center;
-    }
-
-    .image-logo {
-        width: 80%;
-        max-width: 320px;
-        height: auto;
-        bottom: 10%;
-        margin: 50px 50px 0px;
-        display: inline-block;
-        position: absolute;
-
-    }
-
-    .menu-header {
-        display: none;
+        max-width: 493px;
+        padding: 0 30px
     }
 
     .link-section {
-        display: inline-block;
         font-weight: 500;
         font-size: 18px;
         line-height: 27px;
         color: #6FBF44;
         cursor: pointer;
-        margin: 0 auto;
     }
 
-    div {
+    /*  IMAGEM PRINCIPAL  */
+    .image-logo {
+        width: 80%;
+        max-width: 320px;
+        order: 1;
+
+    }
+
+    /*  ÍCONES IDIOMA  */
+    .img-translate {
         top: -10px;
         right: 10px;
     }
